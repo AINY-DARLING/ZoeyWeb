@@ -15,9 +15,9 @@ export default function Hero({ lang, accentColor, translations }: HeroProps) {
   const [imgSrc, setImgSrc] = useState(zhouYuImg);
   
   const handleImageError = () => {
-    // If the imported asset fails for any caching reason, fallback to a safe absolute path with a cache buster
-    if (imgSrc !== '/src/assets/images/zhou_yu_original.png') {
-      setImgSrc('/src/assets/images/zhou_yu_original.png?t=' + Date.now());
+    // Fallback to the imported compiled asset URL with a cache buster if it fails
+    if (imgSrc !== zhouYuImg) {
+      setImgSrc(zhouYuImg + '?t=' + Date.now());
     }
   };
 

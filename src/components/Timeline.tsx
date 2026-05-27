@@ -3,6 +3,16 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Camera, MapPin, Calendar, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PrimaryColor } from '../types';
 
+// Import images so Vite compiles them into dist/assets correctly for production
+// @ts-ignore
+import mygirlImg from '../assets/images/mygirl.jpg';
+// @ts-ignore
+import chenImg from '../assets/images/chen.jpg';
+// @ts-ignore
+import wangqingbinImg from '../assets/images/wangqingbin.jpg';
+// @ts-ignore
+import whcImg from '../assets/images/WHC.jpg';
+
 interface TimelineEvent {
   id: string;
   year: string;
@@ -187,7 +197,7 @@ export default function Timeline({ accentColor }: TimelineProps) {
       location: '浪漫旅程',
       title: '心动时刻：与她的温柔时光 ✦ Sweet Romance',
       description: '岁月温柔，有你相伴。手心传来的温热，和煦微风里的嫣然一笑，皆是生命底章中，最明媚动人、闪闪发光的耀眼时刻。',
-      defaultImage: '/src/assets/images/mygirl.jpg',
+      defaultImage: mygirlImg,
       themeColor: 'bg-neo-rose',
     },
     {
@@ -196,11 +206,11 @@ export default function Timeline({ accentColor }: TimelineProps) {
       location: '马来西亚 吉隆坡',
       title: '我的丑朋友们',
       description: '在Monash校区的红砖绿意间，长椅落日与那通宵不熄的灯光，静静地编织着阿虫与陈的浪漫爱情。恰如青春底片的见证官与黄金神助攻，他俩并肩御风朝朝。爱与热忱永不褪色。谁能懂这俩老男人的爱情呢？',
-      defaultImage: '/src/assets/images/chen.jpg',
+      defaultImage: chenImg,
       images: [
-        '/src/assets/images/chen.jpg',
-        '/src/assets/images/wangqingbin.jpg',
-        '/src/assets/images/WHC.jpg'
+        chenImg,
+        wangqingbinImg,
+        whcImg
       ],
       themeColor: 'bg-neo-yellow',
     },
