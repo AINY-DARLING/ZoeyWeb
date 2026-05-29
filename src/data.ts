@@ -19,7 +19,7 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     heroHeadingDesigner: 'Overseas KD Project Manager',
     heroHeadingFrom: 'from',
     heroHeadingLocation: 'China',
-    heroSub: 'Deeply rooted in the automotive industry, working in the Project Management Department. Responsible for managing overseas client requirements, and seamless team docking with domestic engineering squads to complete high-standard solutions. Leading full-lifecycle overseas KD operations and guiding flagship Middle East vehicle line SOP launches.',
+    heroSub: 'Deeply rooted in the automotive industry, working in the Project Management Department. Responsible for managing overseas client requirements, and seamless team docking with domestic engineering squads to complete high-standard solutions. Leading full-lifecycle overseas KD operations and guiding flagship Thailand vehicle line SOP launches.',
     heroCtaContact: 'Get in touch ✉',
     heroCtaPortfolio: 'View case studies ↗',
     
@@ -33,11 +33,11 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     
     aboutTitle: 'Who\'s behind all this',
     aboutHighlight: 'impactful work?',
-    aboutSub: 'I am Zhou Yu, an Master of International Business alumnus from Monash University and Bachelor of Economics alumnus from East China University of Political Science and Law. I currently serve as an Overseas KD Business Manager in the Project Management Department at Glopiv. I manage diverse overseas customer requests, bridging communication gaps and docking with domestic technical teams to resolve product issues, remove plant setup bottlenecks, and secure zero-delay SOP targets.',
+    aboutSub: 'I am Zhou Yu, an Master of International Business alumnus from Monash University Malaysia campus (where I completed two years of master\'s studies in Kuala Lumpur, Malaysia) and Bachelor of Economics alumnus from East China University of Political Science and Law. I currently serve as an Overseas KD Business Manager in the Project Management Department at Glopiv. I manage diverse overseas customer requests, bridging communication gaps and docking with domestic technical teams to resolve product issues, remove plant setup bottlenecks, and secure zero-delay SOP targets.',
     aboutExperienceLabel: 'Overseas Demand Integration',
     aboutExperienceSub: 'Managing diverse overseas client requirements, aligning engineering metrics, SOP schedules, and scope parameters.',
     aboutProjectsLabel: 'Global SOP Factories Launches',
-    aboutProjectsSub: 'Heading vehicle lines assembly, test runs, and complete SOP launches in major Middle East centers.',
+    aboutProjectsSub: 'Heading vehicle lines assembly, test runs, and complete SOP launches in major Thailand centers.',
     aboutButton: 'See my projects & journey ✦',
     
     portfolioTitle: 'Take a look at my',
@@ -101,7 +101,7 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     
     aboutTitle: '是谁在统筹这些',
     aboutHighlight: '重磅项目？',
-    aboutSub: '我叫周宇，硕士毕业于莫纳什大学国际商务专业，本科毕业于华东政法大学经济学专业。目前在 Glopiv 项目管理部担任海外KD业务经理。主要负责高效对接海外客户需求，协调国内顶尖技术团队进行全生命周期的产品及工艺解决方案开发，破除各链条壁垒，把控核心项目交付与零延误SOP成果落地。',
+    aboutSub: '我叫周宇，硕士毕业于莫纳什大学马来西亚校区国际商务专业（在马来西亚吉隆坡完成了两年的硕士学业），本科毕业于华东政法大学经济学专业。目前在 Glopiv 项目管理部担任海外KD业务经理。主要负责高效对接海外客户需求，协调国内顶尖技术团队进行全生命周期的产品及工艺解决方案开发，破除各链条壁垒，把控核心项目交付与零延误SOP成果落地。',
     aboutExperienceLabel: '海外客户需求承接',
     aboutExperienceSub: '负责全面承接跨国整车客户的多样化工程、材料与工艺要求，梳理形成规范的产品包需求。',
     aboutProjectsLabel: '国内技术团队对接',
@@ -230,8 +230,8 @@ export const PROJECTS: Project[] = [
   {
     id: 'dt-middle-east',
     title: {
-      en: 'Middle East Automotive “DT” KD Assembly & SOP Program',
-      zh: '中东汽车“DT”海外 KD 拆装组装与 SOP 试跑量产战役'
+      en: 'Thailand Automotive “DT” KD Assembly & SOP Program',
+      zh: '泰国汽车“DT”海外 KD 拆装组装与 SOP 试跑量产战役'
     },
     category: {
       en: 'Overseas KD Project Management & Tooling',
@@ -241,8 +241,8 @@ export const PROJECTS: Project[] = [
     textColor: '#FFFFFF',
     accentColor: '#FFD200',
     desc: {
-      en: 'Successfully spearheaded the full bulk parts breakdown, logistics alignment, plant tooling integration, and line verification trials for the flagship DT vehicle lineup in Middle Eastern assembly zones. Acting as the core interface to intake client specifications and bridge with domestic engineering experts.',
-      zh: '全权统筹项目管理部旗下中东海外工厂的一线KD项目全生命周期落地。深入理解、承接并转化海外大客户的技术开发与现场组装工艺要求，高效对接国内各车间及产品专家团队给予攻关解决，破除各种物料干涉与装配异常瓶颈。'
+      en: 'Successfully spearheaded the full bulk parts breakdown, logistics alignment, plant tooling integration, and line verification trials for the flagship DT vehicle lineup in Thailand assembly zones. Acting as the core interface to intake client specifications and bridge with domestic engineering experts.',
+      zh: '全权统筹项目管理部旗下泰国海外工厂的一线KD项目全生命周期落地。深入理解、承接并转化海外大客户的技术开发与现场组装工艺要求，高效对接国内各车间及产品专家团队给予攻关解决，破除各种物料干涉与装配异常瓶颈。'
     },
     mockupType: 'dashboard',
     tags: ['海外 KD 统筹', '需求承接与解决', 'SOP 量产试跑', '中外团队对接'],
@@ -347,7 +347,7 @@ export const EXPERIENCE: ExperienceItem[] = [
       zh: 'Glopiv'
     },
     desc: {
-      en: 'Spearheading vehicle KD assembly and mass-production launches within the Project Management Department. Primarily responsible for receiving diverse overseas client requirements and docking directly with domestic R&D/technical squads to build tailored engineering solutions, resolving bottlenecks and securing Middle East SOP.',
+      en: 'Spearheading vehicle KD assembly and mass-production launches within the Project Management Department. Primarily responsible for receiving diverse overseas client requirements and docking directly with domestic R&D/technical squads to build tailored engineering solutions, resolving bottlenecks and securing Thailand SOP.',
       zh: '当前在项目管理部统筹海外多款车型KD量产项目。主要负责全面承接跨国KD客户的多样化工程与组装工艺需求，端到端高效对接国内技术、试验及制造技术团队协助攻关，解决现场干涉与物料瓶颈，促成整车高分量产并在海外基地成功取得SOP。'
     },
     iconType: 'management'
@@ -363,12 +363,12 @@ export const EXPERIENCE: ExperienceItem[] = [
       zh: '国际贸易硕士研究生'
     },
     company: {
-      en: 'Monash University (QS World University Ranking: #37)',
-      zh: '莫纳什大学 (当前世界排名：第37位)'
+      en: 'Monash University Malaysia (Kuala Lumpur | QS #37)',
+      zh: '莫纳什大学马来西亚校区 (马来西亚吉隆坡 | 当前世界排名第37位)'
     },
     desc: {
-      en: 'Focused study of multinational strategic management, international logistics, supply chain, and cross-cultural communication. Conducted in-depth localization policy and commercial risk research across APAC and Middle East regions, building strong analytical framework for international industrial business. Earned excellent academic distinctions in business negotiation and global team leadership modules.',
-      zh: '系统修读跨文化商业沟通、跨国企业战略管理和国际物流供应链管理。深度分析亚太及中东地区新兴市场的准入规则与本地供应链本土化运作模型，撰写多篇高水平市场调研及供应链配置方案报告。主修商业谈判与项目协调课程，获得优秀毕业生评价，为日后主导海外KD项目跨国沟通与供应链统筹打下坚实的国际化商业底蕴。'
+      en: 'Completed two years of intensive master\'s studies at the Kuala Lumpur campus under Monash University (QS #37), focusing on strategic study of multinational strategic management, international logistics, supply chain, and cross-cultural communication. Conducted in-depth localization policy and commercial risk research across APAC and Southeast Asia (including Thailand) regions, building strong analytical framework for international industrial business. Earned excellent academic distinctions in business negotiation and global team leadership modules.',
+      zh: '在马来西亚吉隆坡校区完成了两年的硕士学业。系统修读跨文化商业沟通、跨国企业战略管理和国际物流供应链管理。深度分析亚太及东南亚（包括泰国）新兴市场的准入规则与本地供应链本土化运作模型，撰写多篇高水平市场调研及供应链配置方案报告。主修商业谈判与项目协调课程，获得优秀毕业生评价，为日后主导海外KD项目跨国沟通与供应链统筹打下坚实的国际化商业底蕴。'
     },
     iconType: 'design'
   },
@@ -459,12 +459,12 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 'test-1',
     quote: {
       en: 'Zhou Yu possesses a rare, staggering understanding of international project operations. During our overseas DT car plant commission, he did not just coordinate parts and tools; he bridged all cultural and technical barriers, acting as the ideal project manager to channel client requirements and align domestic technical squads. A sheer force of delivery!',
-      zh: '周宇 在我们中东“DT”车型散件组装与海外工厂落地调试期间展现出了无与伦比的全局运筹力与现场攻坚深度。他作为项目管理部桥梁，不仅精准承接海外各项紧凑技术指标，更能极其流畅地调配并对接国内顶级技术和工程团队，打破现场瓶颈。绝对一流的项目统筹先锋！'
+      zh: '周宇 在我们泰国“DT”车型散件组装与海外工厂落地调试期间展现出了无与伦比的全局运筹力与现场攻坚深度。他作为项目管理部桥梁，不仅精准承接海外各项紧凑技术指标，更能极其流畅地调配并对接国内顶级技术和工程团队，打破现场瓶颈。绝对一流的项目统筹先锋！'
     },
-    author: 'Abdullah Al-Subaie',
+    author: 'Somchai Prasert',
     role: {
-      en: 'Director of Plant Operations, Middle East Automotive Hub',
-      zh: '中东海外汽车组装工厂生产运营总监'
+      en: 'Director of Plant Operations, Thailand Automotive Hub',
+      zh: '泰国海外汽车组装工厂生产运营总监'
     },
     avatarSeed: 'lily'
   },

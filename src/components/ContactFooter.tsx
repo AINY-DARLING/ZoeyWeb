@@ -128,7 +128,7 @@ export default function ContactFooter({ lang, accentColor, translations }: Conta
 
             {/* Micro warning sticker */}
             <div className="bg-stone-800 text-stone-400 p-3.5 rounded-xl font-mono text-[9px] uppercase tracking-wide border border-white/5">
-              🚀 GLOBAL COVERAGE: Middle East, Melbourne & Shanghai timezone compliant operations.
+              🚀 GLOBAL COVERAGE: Thailand, Kuala Lumpur & Beijing/Shanghai timezone compliant operations.
             </div>
           </div>
         </div>

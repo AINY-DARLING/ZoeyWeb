@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Camera, MapPin, Calendar, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
-import { PrimaryColor } from '../types';
+import { Language, PrimaryColor } from '../types';
 
 // Import images so Vite compiles them into dist/assets correctly for production
 // @ts-ignore
@@ -31,8 +31,10 @@ interface TimelineProps {
 
 function PolaroidPhoto({
   ev,
+  lang,
 }: {
   ev: TimelineEvent;
+  lang: Language;
 }) {
   const images = ev.images || (ev.defaultImage ? [ev.defaultImage] : []);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,9 +60,21 @@ function PolaroidPhoto({
   const currentDisplayImage = images[currentIndex];
 
   const getSlideLabel = (url: string) => {
-    if (url && url.includes('chen')) return '陈 (Chen) ✦ 红线系起的南半球眷侣';
-    if (url && url.includes('wangqingbin')) return '阿虫 ✦ 执火并肩的温暖守护者';
-    if (url && url.includes('WHC')) return 'WHC ✦ Monash 见证官 & 黄金神助攻';
+    if (url && url.includes('chen')) {
+      return lang === 'zh'
+        ? '陈 (Chen) ✦ 红线系起的南半球眷侣'
+        : 'Chen ✦ Soulmates coupled in the Southern Hemisphere';
+    }
+    if (url && url.includes('wangqingbin')) {
+      return lang === 'zh'
+        ? '阿虫 ✦ 执火并肩的温暖守护者'
+        : 'Ah Chong ✦ The devoted guardian standing with us';
+    }
+    if (url && url.includes('WHC')) {
+      return lang === 'zh'
+        ? 'WHC ✦ Monash 见证官 & 黄金神助攻'
+        : 'WHC ✦ Monash witness & golden wingman';
+    }
     return '';
   };
 
@@ -107,7 +121,7 @@ function PolaroidPhoto({
             <Camera className="w-5 h-5" />
           </div>
           <p className="text-xs font-sans font-bold text-stone-400">
-            待续写的高光岁月
+            {lang === 'zh' ? '待续写的高光岁月' : 'Bright chapters await'}
           </p>
           <span className="text-[9px] font-mono text-stone-400 mt-1 uppercase tracking-wider block">
             ✦ Chapter is Reserved ✦
@@ -132,7 +146,7 @@ function PolaroidPhoto({
                   onClick={handlePrev}
                   type="button"
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/95 hover:bg-neo-yellow text-black border-2 border-black flex items-center justify-center shadow-[1px_1px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer z-10"
-                  title="上一张"
+                  title={lang === 'zh' ? '上一张' : 'Previous'}
                 >
                   <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
                 </button>
@@ -140,7 +154,7 @@ function PolaroidPhoto({
                   onClick={handleNext}
                   type="button"
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/95 hover:bg-neo-yellow text-black border-2 border-black flex items-center justify-center shadow-[1px_1px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer z-10"
-                  title="下一张"
+                  title={lang === 'zh' ? '下一张' : 'Next'}
                 >
                   <ChevronRight className="w-4 h-4 stroke-[2.5]" />
                 </button>
@@ -167,7 +181,7 @@ function PolaroidPhoto({
                     className={`w-1.5 h-1.5 rounded-full transition-all ${
                       idx === currentIndex ? 'bg-neo-yellow scale-125' : 'bg-white/60 hover:bg-white'
                     }`}
-                    title={`第 ${idx + 1} 页`}
+                    title={lang === 'zh' ? `第 ${idx + 1} 页` : `Page ${idx + 1}`}
                   />
                 ))}
               </div>
@@ -185,46 +199,38 @@ function PolaroidPhoto({
 }
 
 interface TimelineProps {
+  lang: Language;
   accentColor: PrimaryColor;
 }
 
-export default function Timeline({ accentColor }: TimelineProps) {
+export default function Timeline({ lang, accentColor }: TimelineProps) {
   // Preset list of warm, highly human milestones matched with Zhou Yu's genuine life path
-  const [events, setEvents] = useState<TimelineEvent[]>([
+  const events: TimelineEvent[] = [
     {
       id: 'event-my-girlfriend',
       year: '2026',
-      location: '浪漫旅程',
-      title: '心动时刻：与她的温柔时光 ✦ Sweet Romance',
-      description: '岁月温柔，有你相伴。手心传来的温热，和煦微风里的嫣然一笑，皆是生命底章中，最明媚动人、闪闪发光的耀眼时刻。',
+      location: lang === 'zh' ? '浪漫旅程' : 'Romantic Journey',
+      title: lang === 'zh' ? '心动时刻：与她的温柔时光 ✦ Sweet Romance' : 'Heartbeats: Tender Times with Her ✦ Sweet Romance',
+      description: lang === 'zh'
+        ? '岁月温柔，有你相伴。手心传来的温热，和煦微风里的嫣然一笑，皆是生命底章中，最明媚动人、闪闪发光的耀眼时刻。'
+        : 'Years grow gentle with you by my side. The warmth of holding hands, the sweet smile in the soft breeze, these are the most luminous, sparkling moments in the chapters of life.',
       defaultImage: mygirlImg,
       themeColor: 'bg-neo-rose',
     },
-    {
-      id: 'event-monash-love',
-      year: '2025',
-      location: '马来西亚 吉隆坡',
-      title: '我的丑朋友们',
-      description: '在Monash校区的红砖绿意间，长椅落日与那通宵不熄的灯光，静静地编织着阿虫与陈的浪漫爱情。恰如青春底片的见证官与黄金神助攻，他俩并肩御风朝朝。爱与热忱永不褪色。谁能懂这俩老男人的爱情呢？',
-      defaultImage: chenImg,
-      images: [
-        chenImg,
-        wangqingbinImg,
-        whcImg
-      ],
-      themeColor: 'bg-neo-yellow',
-    },
+
     {
       id: 'placeholder-2',
       year: 'Future',
-      location: '奔赴未来的旅途',
-      title: '极客浩瀚，未完待续 ✦ To Be Continued',
-      description: '岁月在时光树中安静舒展，此篇章正留白静候。诸君请期待',
+      location: lang === 'zh' ? '奔赴未来的旅途' : 'Journey into the Future',
+      title: lang === 'zh' ? '极客浩瀚，未完待续 ✦ To Be Continued' : 'Boundless Horizons, To Be Continued ✦',
+      description: lang === 'zh'
+        ? '岁月在时光树中安静舒展，此篇章正留白静候。诸君请期待'
+        : 'As years unfold gently upon the timeline tree, this chapter remains as white space, awaiting the future. Stay tuned.',
       defaultImage: '',
       isPlaceholder: true,
       themeColor: 'bg-neo-sky',
     },
-  ]);
+  ];
 
   const colors = {
     yellow: 'border-neo-yellow',
@@ -245,16 +251,18 @@ export default function Timeline({ accentColor }: TimelineProps) {
         {/* Section Heading with Neo-Brutalist Sticker Style */}
         <div className="text-center mb-16">
           <div className="inline-block bg-neo-purple text-white neo-border px-4 py-1.5 rounded-lg font-mono font-black text-xs uppercase tracking-widest mb-4 rotate-[-1deg]">
-            ✦ 此外 • 岁月时光隧道 ✦
+            {lang === 'zh' ? '✦ 此外 • 岁月时光隧道 ✦' : '✦ Besides • Voyage through Time ✦'}
           </div>
           <h2 className="font-display font-black text-3.5xl sm:text-5xl tracking-tight text-neo-text mb-4 uppercase">
-            岁月碎片与{' '}
+            {lang === 'zh' ? '岁月碎片与 ' : 'Fragments of Time & '}
             <span className="px-4 py-1 bg-neo-yellow text-black neo-border inline-block rotate-[1.5deg]">
-              死党合影
+              {lang === 'zh' ? '死党合影' : 'Close Buddies'}
             </span>
           </h2>
           <p className="font-sans text-stone-600 text-sm md:text-base font-medium max-w-2xl mx-auto mt-3 leading-relaxed">
-            “在齿轮啮合与数字跳动的缝隙里，那些与挚友并肩执火的岁月，滚烫而又纯粹。星光落入酒杯，时光凝在底片。”
+            {lang === 'zh'
+              ? '“在齿轮啮合与数字跳动的缝隙里，那些与挚友并肩执火的岁月，滚烫而又纯粹。星光落入酒杯，时光凝在底片。”'
+              : '“Between the interlocking gears and the pulse of digital numbers, the days of stepping forward carrying fire beside dear friends were hot and pure. Starlights fell into wine glasses, as time was frozen in the film negative.”'}
           </p>
         </div>
 
@@ -289,6 +297,7 @@ export default function Timeline({ accentColor }: TimelineProps) {
                         <div className="w-full lg:w-[48%] shrink-0 pb-3 pr-3 relative">
                           <PolaroidPhoto
                             ev={ev}
+                            lang={lang}
                           />
                         </div>
 
@@ -317,7 +326,9 @@ export default function Timeline({ accentColor }: TimelineProps) {
                           {/* Footer with playful micro-element */}
                           <div className="mt-8 pt-4 border-t border-dashed border-stone-100 flex items-center justify-between">
                             <span className="font-mono text-[9px] text-stone-400 font-black uppercase tracking-wider">
-                              {!ev.isPlaceholder ? '✦ Love and memories in monash' : '✦ static chapter pending'}
+                              {!ev.isPlaceholder 
+                                ? (lang === 'zh' ? '✦ 莫纳什之恋与挚友情谊' : '✦ Love and memories in Monash Malaysia') 
+                                : (lang === 'zh' ? '✦ 等待续写的空白篇章' : '✦ Static chapter pending')}
                             </span>
                             <span className="inline-flex items-center gap-2 text-rose-500">
                               <Heart className="w-4 h-4 fill-current animate-pulse" />
@@ -330,7 +341,9 @@ export default function Timeline({ accentColor }: TimelineProps) {
                       {/* Spark decorator flower pin */}
                       <div className="absolute top-[-10px] right-3 transform rotate-6 z-20">
                         <div className={`neo-border px-3 py-1 rounded-md ${ev.themeColor} text-black font-mono font-black text-[9px] uppercase tracking-wider shadow-[2px_2px_0px_rgba(0,0,0,1)]`}>
-                          {!ev.isPlaceholder ? 'MEMORIES 📷' : 'FUTURE ✦'}
+                          {!ev.isPlaceholder 
+                            ? (lang === 'zh' ? '回忆时光 📷' : 'MEMORIES 📷') 
+                            : (lang === 'zh' ? '未来篇章 ✦' : 'FUTURE ✦')}
                         </div>
                       </div>
                       

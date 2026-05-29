@@ -68,6 +68,7 @@ export default function App() {
 
         {/* 5. Timeline Tree with funny memory pictures */}
         <Timeline
+          lang={lang}
           accentColor={accentColor}
         />
 

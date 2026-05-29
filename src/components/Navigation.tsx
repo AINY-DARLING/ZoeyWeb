@@ -85,7 +85,7 @@ export default function Navigation({
               />
             </div>
             <span className="font-display font-black tracking-tight text-base hidden sm:flex items-center gap-0.5">
-              <span>周宇</span>
+              <span>{lang === 'zh' ? '周宇' : 'Zhou Yu'}</span>
               <span className="h-2 w-2 rounded-full bg-neo-rose border border-black animate-pulse" />
             </span>
           </a>
@@ -132,6 +132,17 @@ export default function Navigation({
           {/* Controls & Mini Toggles */}
           <div className="flex items-center gap-2.5 pr-1">
             
+            {/* Language Toggle Button */}
+            <button
+              onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+              className="flex items-center gap-1 bg-white hover:bg-[#FAF9F6] text-black px-2.5 py-1.5 rounded-full neo-border-thin shadow-[2px_2px_0px_rgba(0,0,0,1)] text-xs font-mono font-black transition-all hover:scale-105 active:scale-95 cursor-pointer text-neo-text"
+              id="lang-toggle-button"
+              title={lang === 'zh' ? 'Switch to English' : '切换为中文'}
+            >
+              <Globe className="w-3.5 h-3.5 text-neo-rose animate-[spin_20s_linear_infinite]" />
+              <span>{lang === 'zh' ? 'EN' : '中文'}</span>
+            </button>
+
             {/* Direct Phone Call Button */}
             <a
               href="tel:+8615300755797"
@@ -212,6 +223,31 @@ export default function Navigation({
               >
                 {translations.navTimeline}
               </a>
+
+              {/* Language Settings for Mobile */}
+              <div className="mt-2 pt-4 border-t-2 border-dashed border-gray-250">
+                <span className="text-xs uppercase font-mono text-gray-500 block mb-2 font-black flex items-center gap-1">
+                  <Globe className="w-3 h-3 text-neo-rose" /> {lang === 'zh' ? '切换语言 / LANGUAGE' : 'CHANGE LANGUAGE'}
+                </span>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => { setLang('zh'); setMobileMenuOpen(false); }}
+                    className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-black border-2 border-black ${
+                      lang === 'zh' ? 'bg-neo-yellow shadow-[2px_2px_0px_rgba(0,0,0,1)]' : 'bg-white'
+                    }`}
+                  >
+                    中文简体
+                  </button>
+                  <button
+                    onClick={() => { setLang('en'); setMobileMenuOpen(false); }}
+                    className={`flex-1 py-1.5 rounded-lg text-xs font-mono font-black border-2 border-black ${
+                      lang === 'en' ? 'bg-neo-yellow shadow-[2px_2px_0px_rgba(0,0,0,1)]' : 'bg-white'
+                    }`}
+                  >
+                    English
+                  </button>
+                </div>
+              </div>
 
               {/* Theme Settings for Mobile */}
               <div className="mt-4 pt-4 border-t-2 border-dashed border-black">
