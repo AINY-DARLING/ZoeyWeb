@@ -206,7 +206,7 @@ Honors MIB graduate from Monash University Malaysia campus in Kuala Lumpur, deep
       {/* State-of-the-art Dual-Language Resume PDF Interactive Workspace */}
       <AnimatePresence>
         {showMockResume && (
-          <div className="fixed inset-0 bg-[#1e1e1e]/95 z-50 flex flex-col justify-between overflow-hidden">
+          <div className="fixed inset-0 bg-[#1e1e1e]/95 z-50 flex flex-col justify-between overflow-hidden print-modal-overlay">
             
             {/* Inject print-specific style parameters to assure pixel-perfect A4 printing */}
             <style dangerouslySetInnerHTML={{ __html: `
@@ -218,45 +218,101 @@ Honors MIB graduate from Monash University Malaysia campus in Kuala Lumpur, deep
                   padding: 0 !important;
                   height: auto !important;
                   width: 100% !important;
+                  overflow: visible !important;
                 }
-                /* Hide everything in the body except our special printable canvas */
-                body > div:not(.print-container-parent) {
+                
+                /* Hide everything in the body except the root */
+                body > *:not(#root) {
                   display: none !important;
                 }
-                #root, header, footer, nav, #falling-elements-bg, section:not(.direct-resume-section) {
+                
+                /* Hide navbar, footer, falling background, and buttons */
+                #falling-elements-bg, 
+                header:not(.print-modal-overlay header), 
+                footer, 
+                nav, 
+                button, 
+                .no-print-toolbar,
+                .no-print-footer,
+                .absolute.top-0.left-0.right-0.h-1.5.bg-neo-rose.no-print-toolbar {
                   display: none !important;
                   visibility: hidden !important;
                   height: 0 !important;
                   overflow: hidden !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                  border: none !important;
                 }
-                /* Force the printed container to top and expand */
-                .print-container-parent {
+
+                /* Inside #root, hide non-main segments */
+                #root > div > *:not(main) {
+                  display: none !important;
+                }
+                
+                /* Inside main, hide all sections except experience section */
+                main > *:not(#experience) {
+                  display: none !important;
+                  visibility: hidden !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                  border: none !important;
+                }
+
+                /* Inside #experience, hide all items except our print overlay */
+                #experience > *:not(.print-modal-overlay) {
+                  display: none !important;
+                  visibility: hidden !important;
+                  height: 0 !important;
+                  overflow: hidden !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                  border: none !important;
+                }
+
+                /* Make print overlay a regular positioned element, visible and taking full page width */
+                .print-modal-overlay {
                   position: absolute !important;
                   left: 0 !important;
                   top: 0 !important;
                   width: 100% !important;
-                  margin: 0 !important;
-                  padding: 1.5cm !important;
+                  height: auto !important;
                   background-color: #ffffff !important;
-                  visibility: visible !important;
+                  color: #000000 !important;
                   display: block !important;
+                  overflow: visible !important;
+                  z-index: auto !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
                 }
-                .print-container-parent * {
-                  visibility: visible !important;
+
+                /* Frame container hosting the printable panel */
+                .print-container-parent {
+                  position: relative !important;
+                  left: 0 !important;
+                  top: 0 !important;
+                  width: 100% !important;
+                  height: auto !important;
+                  padding: 0 !important;
+                  margin: 0 !important;
+                  background-color: #ffffff !important;
+                  display: block !important;
+                  overflow: visible !important;
                 }
-                .no-print-toolbar, .no-print-footer {
-                  display: none !important;
-                  visibility: hidden !important;
-                }
-                /* Eliminate high shadows or non-printable borders */
+
+                /* Force the printable document sheet to take standard printable layout margins without zoom/scale limits */
                 .printable-document-sheet {
                   border: none !important;
                   box-shadow: none !important;
                   margin: 0 !important;
-                  padding: 0 !important;
+                  padding: 2cm !important;
                   width: 100% !important;
+                  max-width: 100% !important;
                   transform: scale(1) !important;
+                  display: block !important;
                   background-color: #ffffff !important;
+                  overflow: visible !important;
                 }
               }
             ` }} />
