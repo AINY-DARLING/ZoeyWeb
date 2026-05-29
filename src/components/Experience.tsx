@@ -86,7 +86,101 @@ Honors MIB graduate from Monash University Malaysia campus in Kuala Lumpur, deep
   };
 
   const handlePrint = () => {
-    window.print();
+    const printElement = document.getElementById('resume-printable-area');
+    if (!printElement) {
+      window.print();
+      return;
+    }
+
+    // Get the HTML content
+    const printContent = printElement.innerHTML;
+
+    // Create a temporary hidden iframe
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = '0';
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentWindow?.document || iframe.contentDocument;
+    if (!doc) {
+      window.print();
+      return;
+    }
+
+    // Capture CSS styles loaded in this document
+    let styles = '';
+    const styleSheets = document.styleSheets;
+    try {
+      for (let i = 0; i < styleSheets.length; i++) {
+        const sheet = styleSheets[i];
+        const rules = sheet.cssRules || sheet.rules;
+        if (rules) {
+          for (let j = 0; j < rules.length; j++) {
+            styles += rules[j].cssText;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Could not read styles, falling back to link elements:', e);
+    }
+
+    // Capture all stylesheet links
+    const links = Array.from(document.querySelectorAll('link[rel="stylesheet"]'))
+      .map(link => link.outerHTML)
+      .join('\n');
+
+    // Write beautifully formatted self-contained document
+    doc.open();
+    doc.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>${resumeLang === 'zh' ? '周宇_个人简历' : 'Zhou_Yu_Resume'}</title>
+          <meta charset="utf-8">
+          ${links}
+          <style>
+            ${styles}
+            body {
+              background-color: #ffffff !important;
+              color: #000000 !important;
+              font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+              padding: 1.5cm !important;
+              margin: 0 !important;
+            }
+            .no-print-toolbar, 
+            .no-print {
+              display: none !important;
+              visibility: hidden !important;
+            }
+            img {
+              -webkit-print-color-adjust: exact !important;
+              print-color-adjust: exact !important;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="w-full max-w-[800px] mx-auto text-black text-left">
+            ${printContent}
+          </div>
+          <script>
+            window.onload = function() {
+              setTimeout(function() {
+                window.focus();
+                window.print();
+                setTimeout(function() {
+                  window.frameElement?.parentNode?.removeChild(window.frameElement);
+                }, 500);
+              }, 300);
+            };
+          </script>
+        </body>
+      </html>
+    `);
+    doc.close();
   };
 
   const getIcon = (type: string) => {
@@ -410,6 +504,16 @@ Honors MIB graduate from Monash University Malaysia campus in Kuala Lumpur, deep
                     <Printer className="w-3.5 h-3.5" />
                     <span>{resumeLang === 'zh' ? '保存为 PDF' : 'Save/Print PDF'}</span>
                   </button>
+
+                  <a
+                    href={resumeLang === 'zh' ? '/zhou_yu_resume_zh.md' : '/zhou_yu_resume_en.md'}
+                    download={resumeLang === 'zh' ? '周宇_个人简历.md' : 'Zhou_Yu_Resume.md'}
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-neo-sky hover:bg-[#1a93d9] text-black active:scale-95 rounded-lg text-xs font-mono font-black transition-all cursor-pointer border border-neo-sky"
+                    title="Download pristine Markdown text copy"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>{resumeLang === 'zh' ? '下载 MD 文件' : 'Download Text (.md)'}</span>
+                  </a>
 
                   <button
                     onClick={() => setShowMockResume(false)}
