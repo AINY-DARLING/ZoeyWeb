@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Briefcase, ArrowUpRight, GraduationCap, Calendar, Star, FileText, Check, Globe, ZoomIn, ZoomOut, Printer, Copy, RotateCcw, Download } from 'lucide-react';
+import { Briefcase, ArrowUpRight, GraduationCap, Calendar, Star, FileText, Check, Globe, ZoomIn, ZoomOut, Printer, Copy, RotateCcw, Download, AlertCircle, ExternalLink } from 'lucide-react';
 import { ExperienceItem, Language, PrimaryColor, TranslationSet } from '../types';
 import { EXPERIENCE } from '../data';
 import zhouYuPhoto from '../assets/images/myself1.jpg';
@@ -410,6 +410,27 @@ Honors MIB graduate from Monash University Malaysia campus in Kuala Lumpur, deep
                 }
               }
             ` }} />
+
+            {/* Embedded Iframe Safe Mode Warning */}
+            <div className="bg-[#fffbeb] border-b border-amber-200 px-4 py-3 text-amber-900 text-xs font-sans font-bold no-print-toolbar flex items-center justify-between gap-3 flex-wrap z-30">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="w-4.5 h-4.5 text-[#d97706] shrink-0 animate-pulse" />
+                <p className="text-left leading-relaxed">
+                  {resumeLang === 'zh' 
+                    ? '重要提示：由于现代浏览器的安全和沙箱策略，在系统的 iframe 预览模式下无法直接唤起正常打印（会生成空白页面）。请直接点击右侧按钮，在新页面中重新打开网页，再次点击“保存为 PDF”即可 100% 完美渲染并保存您的 A4 超清五星简历！' 
+                    : 'IMPORTANT NOTE: Due to browser sandbox rules, printing direct from this preview is restricted by your browser (produces a blank page). Please click the link to the right to open this site in a standalone new safe browser window, then click "Save/Print PDF" for a 100% perfect A4 render!'}
+                </p>
+              </div>
+              <a
+                href={typeof window !== 'undefined' ? window.location.href : '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#d97706] hover:bg-[#b45309] text-white rounded font-mono font-black transition-all uppercase cursor-pointer text-[11px] shrink-0"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>{resumeLang === 'zh' ? '在新窗口打开并完美打印 ↗' : 'Open in New Tab & Print ↗'}</span>
+              </a>
+            </div>
 
             {/* Top Toolbar - PDF Viewer Theme Style */}
             <header className="bg-[#2a2a2a] border-b border-[#3e3e3e] px-4 py-3 text-white flex flex-col sm:flex-row items-center justify-between gap-3 no-print-toolbar z-20 shadow-md">
