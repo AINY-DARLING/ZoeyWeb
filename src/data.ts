@@ -1,27 +1,15 @@
-import { Project, Service, ExperienceItem, Testimonial, Article, TranslationSet } from './types';
+import { Service, ExperienceItem, TranslationSet } from './types';
 
 export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
   en: {
     navHome: 'Home',
     navAbout: 'About',
     navServices: 'Services',
-    navPortfolio: 'Portfolio',
     navExperience: 'Experience',
     navTimeline: 'Besides',
-    navContact: 'Contact',
-    navCart: 'Cart',
-    navPages: 'Pages',
     
     heroBadge: '✦ OPEN FOR ROLES • MAY 2026 ✦',
-    heroHeadingI: 'I\'m',
-    heroHeadingAm: '',
-    heroHeadingA: 'an',
-    heroHeadingDesigner: 'Overseas KD Project Manager',
-    heroHeadingFrom: 'from',
-    heroHeadingLocation: 'China',
     heroSub: 'Deeply rooted in the automotive industry, working in the Project Management Department. Responsible for managing overseas client requirements, and seamless team docking with domestic engineering squads to complete high-standard solutions. Leading full-lifecycle overseas KD operations and guiding flagship Thailand vehicle line SOP launches.',
-    heroCtaContact: 'Get in touch ✉',
-    heroCtaPortfolio: 'View case studies ↗',
     
     tickerText: [
       'KD PARTS INTEGRATION', 'OVERSEAS LINE INSTALLATION', 'CLIENT REQUIREMENT INTAKE', 'TECHNICAL TEAM DOCKING', 'AUTO-PAINTING LINES', 'PROJECT DELIVERY', 'FACTORY LAUNCH COLLAB'
@@ -40,32 +28,19 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     aboutProjectsSub: 'Heading vehicle lines assembly, test runs, and complete SOP launches in major Thailand centers.',
     aboutButton: 'See my projects & journey ✦',
     
-    portfolioTitle: 'Take a look at my',
-    portfolioHighlight: 'portfolio cases',
-    portfolioSub: 'Real interactive case studies showcasing the intersection of logistics timing, enterprise treasury allocation, and vendor scheduling.',
-    portfolioCta: 'Browse all cases ❐',
-    portfolioViewCase: 'View case study',
     
     experienceTitle: 'Take a look at my',
     experienceHighlight: 'past experience',
     experienceSub: 'A journey of technical authority, project leadership, and meticulous industrial execution. Consistently driving projects up to success.',
     experienceCta: 'See full resume (PDF) 🗎',
     
-    testimonialsTitle: 'What my partners say',
-    testimonialsHighlight: 'about my work',
-    testimonialsSub: 'Don\'t take my word for it. Here is how worldwide automotive plant operations leaders and finance directors review our collaborations.',
     
-    articlesTitle: 'Articles & News',
-    articlesCta: 'Browse all articles ✎',
-    articlesReadMore: 'Read article ↗',
     
     newsletterTitle: 'Subscribe to my industry letter',
     newsletterPlaceholder: 'Enter your email address',
     newsletterButton: 'Subscribe',
     newsletterSuccess: 'Awesome! You have subscribed safely.',
     
-    footerContactUs: 'Contact us',
-    footerPhone: 'Phone & Socials',
     footerRights: 'Made with passion. © 2026 Zhou Yu. All rights reserved.',
     footerSlogan: 'Daring automotive KD leadership. No standard templates. Built to drive Chinese brands across frontiers.'
   },
@@ -73,23 +48,11 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     navHome: '首页',
     navAbout: '关于我',
     navServices: '专业能力',
-    navPortfolio: '核心项目',
     navExperience: '行业经历',
     navTimeline: '此外',
-    navContact: '联络我',
-    navCart: '购物车',
-    navPages: '页面',
     
     heroBadge: '✦ 开放合作机会 • 2026年5月 ✦',
-    heroHeadingI: '我是',
-    heroHeadingAm: '',
-    heroHeadingA: '一位来自',
-    heroHeadingDesigner: '汽车KD项目经理',
-    heroHeadingFrom: '中国的',
-    heroHeadingLocation: '周宇',
     heroSub: '正在深耕汽车制造领域，负责Glopiv集团的海外KD项目统筹。全力承接海外车企客户的多样化需求，端到端对接我司顶尖技术与工程团队完成需求的最佳开发解决。致力于海外KD（散件组装）项目全生命周期策划、跨文化协调与海外基地SOP量产成果的最终落地。',
-    heroCtaContact: '即刻联络 ✉',
-    heroCtaPortfolio: '浏览项目案例 ↗',
     
     tickerText: [
       '海外客户需求承接', '海外产线安装', '国内技术团队对接', '客户需求深度解决', '海外KD项目统筹', 'SOP量产调试', '工厂投产协同'
@@ -108,32 +71,19 @@ export const TRANSLATIONS: Record<'en' | 'zh', TranslationSet> = {
     aboutProjectsSub: '端到端组织及对接国内多学科核心技术专家与装配工艺力量，高效推动客户痛点顺利化解。',
     aboutButton: '浏览我的汽车项目 & 履历 ✦',
     
-    portfolioTitle: '带您审阅我的',
-    portfolioHighlight: '核心实战案例',
-    portfolioSub: '真实发生的卓越交付案例：展现海外本地建厂协调、大型供应链排产以及集团资金融通的综合才智。',
-    portfolioCta: '浏览全部案例 ❐',
-    portfolioViewCase: '查看详细案例',
     
     experienceTitle: '带您回顾我的',
     experienceHighlight: '职业&学业履历',
     experienceSub: '从知名汽车系统、大型工业集团到海外KD项目经理，用技术深度与管理广度推动业务增长。',
     experienceCta: '查看完整简历 (PDF) 🗎',
     
-    testimonialsTitle: '同行与合作伙伴对我的',
-    testimonialsHighlight: '真实口碑评价',
-    testimonialsSub: '不只是自夸。来看看与我并肩作战的各界朋友和项目负责人是如何评价这一路攻坚克难的。',
     
-    articlesTitle: '行业洞察与专业文章',
-    articlesCta: '阅读全部文章 ✎',
-    articlesReadMore: '阅读文章 ↗',
     
     newsletterTitle: '订阅我的行业分享简报',
     newsletterPlaceholder: '输入您的电子邮箱地址',
     newsletterButton: '立即订阅',
     newsletterSuccess: '订阅成功！感谢您的关注。',
     
-    footerContactUs: '极速建联',
-    footerPhone: '电话与社媒',
     footerRights: '用心造物。© 2026 周宇. 版权所有。',
     footerSlogan: '深耕海外KD技术，杜绝千篇一律的刻板。为中国汽车品牌出海量身定制。'
   }
@@ -223,111 +173,6 @@ export const SERVICES: Service[] = [
     },
     bgColor: '#FAF9F6',
     textColor: '#171717'
-  }
-];
-
-export const PROJECTS: Project[] = [
-  {
-    id: 'dt-middle-east',
-    title: {
-      en: 'Thailand Automotive “DT” KD Assembly & SOP Program',
-      zh: '泰国汽车“DT”海外 KD 拆装组装与 SOP 试跑量产战役'
-    },
-    category: {
-      en: 'Overseas KD Project Management & Tooling',
-      zh: '海外 KD 项目管理 & 工艺现场调试'
-    },
-    bgColor: '#8B5CF6',
-    textColor: '#FFFFFF',
-    accentColor: '#FFD200',
-    desc: {
-      en: 'Successfully spearheaded the full bulk parts breakdown, logistics alignment, plant tooling integration, and line verification trials for the flagship DT vehicle lineup in Thailand assembly zones. Acting as the core interface to intake client specifications and bridge with domestic engineering experts.',
-      zh: '全权统筹项目管理部旗下泰国海外工厂的一线KD项目全生命周期落地。深入理解、承接并转化海外大客户的技术开发与现场组装工艺要求，高效对接国内各车间及产品专家团队给予攻关解决，破除各种物料干涉与装配异常瓶颈。'
-    },
-    mockupType: 'dashboard',
-    tags: ['海外 KD 统筹', '需求承接与解决', 'SOP 量产试跑', '中外团队对接'],
-    features: {
-      en: [
-        'Captured and standardized complex client specifications into actionable engineering deliverables',
-        'Coordinated cross-border packing, customs clearances, and marine containers timing pipeline',
-        'Bridged communication between domestic floor engineers and foreign regional partners',
-        'Eliminated assembly interference issues, verifying a zero-delay local plant commission'
-      ],
-      zh: [
-        '精准承接并模块化梳理海外大客户的多样化技术、工艺与工程规范需求',
-        '规划大型海运散装拆解、特种件防护集装箱运输及到岸关检物流链条',
-        '端到端无缝对接国内核心技术团队，全生命周期保障解决方案的高规格产出',
-        '现场带领中外技术组消减三大现场干涉瓶颈，促成项目 100% 零延误达成 SOP 目标'
-      ]
-    }
-  },
-  {
-    id: 'kerry-treasury',
-    title: {
-      en: 'Kerry Oils / Jinlongyu Factory-Chain Capital Management Program',
-      zh: '金龙鱼股份（嘉里食品）全国工厂大型账物资金融通计划'
-    },
-    category: {
-      en: 'Enterprise Treasury & Multi-Bank Negotiation',
-      zh: '集团资金融通 & 信用证财务套利'
-    },
-    bgColor: '#3B82F6',
-    textColor: '#FFFFFF',
-    accentColor: '#FF5E5B',
-    desc: {
-      en: 'Coordinated macro capital allocation and liquidity funding operations for several premier industrial processing mills in the Kerry Oils portfolio, supporting uninterrupted daily raw-material purchasing power.',
-      zh: '掌理金龙鱼（嘉里食品工业）旗下全国多家核心粮油深加工工厂的日常大规模资金需求测算。通过高频汇总，精妙布局资金融通方案：开展大行存贷价差套利、开展信用证等国际信用付款与贸易融资。'
-    },
-    mockupType: 'browser',
-    tags: ['资金融通计划', '利差价格磋商', '信用证融资工具', '制造链条资金保障'],
-    features: {
-      en: [
-        'Synthesized daily multi-mill raw input orders to engineer precision funding allocation models',
-        'Negotiated spread terms with tier-1 commercial bank desks to extract financial margins',
-        'Utilized Letter of Credit metrics to safely boost working capital structures',
-        'Defended complex high-volume trade pipelines against liquidity or shipping cycle disruptions'
-      ],
-      zh: [
-        '实时统计及推算金龙鱼旗下多处重大加工网点物料备货资金流信息，制定资金调度图表',
-        '与多家国家大型商业银行金融产品经理直接沟通谈判，最大化压缩中介成本赚取财务收益',
-        '熟练操作并落地信用证等国际贸易结算与信用融资工具，化解高频用汇风险',
-        '在极度紧凑的贸易交货期下，为一线核心加工厂每日安全平稳划付千万级流转资金'
-      ]
-    }
-  },
-  {
-    id: 'alfmeier-components',
-    title: {
-      en: 'Alfmeier Automotive Precision Components Supply Chain Alignment',
-      zh: '德系艾福迈 (Alfmeier) 汽车阀体与精密零部件供应链排产跟进'
-    },
-    category: {
-      en: 'Automotive SAP Data & Vendor Synchronization',
-      zh: '整车供应链跟进 & SAP ERP 生产指令调度'
-    },
-    bgColor: '#FF5E5B',
-    textColor: '#FFFFFF',
-    accentColor: '#5CE1E6',
-    desc: {
-      en: 'Directly managed purchaser requirements integration, components manufacturing queuing, raw parts stock synchronization, and warehouse dispatch mechanics using optimized SAP configurations.',
-      zh: '服务于德系汽车核心系统阀片与管件供应商艾福迈（Alfmeier）。对口全球优选汽车制造客户，合理化分解采购订单并全流程跟进工厂生产排期与现场物流分发。'
-    },
-    mockupType: 'code',
-    tags: ['供应链排程', 'SAP ERP 运行跟进', '仓储精益流转', '跨部门交货闭环'],
-    features: {
-      en: [
-        'Successfully aligned automotive client bill of materials directly into dynamic plant instructions',
-        'Optimized SAP master data integrity, reducing warehouse delivery latency parameters',
-        'Coordinated with raw vendors and line logistics dispatch to maintain low manufacturing deadlocks',
-        'Orchestrated multi-tier emergency containment protocols during shipping and transit lags'
-      ],
-      zh: [
-        '快速承接整车厂采购物料清单（BOM），拆解并下发最优工厂生产线作业任务',
-        '深度维护并剔除 SAP 系统中零配件数据偏差，使原材料和成品在仓储与物流阶段流转耗时缩短',
-        '跟进配套供应商配送状态、协调仓库备料，杜绝总段组配缺料引发的停工待料事件',
-        '针对不确定的出海陆物联，迅速启动跨国联络重排物流组合，完成 100% 协议交货承诺'
-      ]
-    }
   }
 ];
 
@@ -454,103 +299,3 @@ export const EXPERIENCE: ExperienceItem[] = [
   }
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 'test-1',
-    quote: {
-      en: 'Zhou Yu possesses a rare, staggering understanding of international project operations. During our overseas DT car plant commission, he did not just coordinate parts and tools; he bridged all cultural and technical barriers, acting as the ideal project manager to channel client requirements and align domestic technical squads. A sheer force of delivery!',
-      zh: '周宇 在我们泰国“DT”车型散件组装与海外工厂落地调试期间展现出了无与伦比的全局运筹力与现场攻坚深度。他作为项目管理部桥梁，不仅精准承接海外各项紧凑技术指标，更能极其流畅地调配并对接国内顶级技术和工程团队，打破现场瓶颈。绝对一流的项目统筹先锋！'
-    },
-    author: 'Somchai Prasert',
-    role: {
-      en: 'Director of Plant Operations, Thailand Automotive Hub',
-      zh: '泰国海外汽车组装工厂生产运营总监'
-    },
-    avatarSeed: 'lily'
-  },
-  {
-    id: 'test-2',
-    quote: {
-      en: 'Working with Zhou Yu in group treasury was an absolute privilege. His daily cash requirements modeling for dozens of industrial processing factories allowed us to optimize liquidity spread margins with commercial banks and leverage import L/C structures safely under extreme delivery cycles.',
-      zh: '在金龙鱼同周宇共事资金融通的岁月里，他的数字敏感度与宏观把控令人折服。通过日常对全中国数十个大型工厂的备货资金进行高保真测算，他与各大行博弈价差博取财务收益，在极度紧凑的贸易结算期内为供应链筑牢了最平稳、最安全的用汇流动防线。'
-    },
-    author: '李建明 (Jianming Li)',
-    role: {
-      en: 'Treasury & Funding Director, Kerry Grain & Oil Group',
-      zh: '益海嘉里（金龙鱼所属集团）总部资金部副总监'
-    },
-    avatarSeed: 'marcus'
-  }
-];
-
-export const ARTICLES: Article[] = [
-  {
-    id: 'art-1',
-    tag: {
-      en: 'Automotive KD',
-      zh: '海外 KD 筹集'
-    },
-    title: {
-      en: 'How to coordinate overseas automotive KD projects: from client requirement integration to multi-party technical docking',
-      zh: '如何全流程统筹海外汽车 KD 项目的客户需求承接与跨国多方技术对接及解决？'
-    },
-    desc: {
-      en: 'An in-depth guide from a project management perspective, covering client requirements capture, domestic technical team alignment, and solving cross-border production challenges.',
-      zh: '跨国建厂实务：项目管理部视角，详解如何精准对接并承接海外客户痛点、高效协同国内各车间技术专家与进行多语种解决方案开发。'
-    },
-    date: 'May 18, 2026',
-    author: '周宇 (Zhou Yu)',
-    readTime: {
-      en: '6 min read',
-      zh: '阅读时长约 6 分钟'
-    },
-    bgColor: '#FFD200',
-    illustrationType: 'tools'
-  },
-  {
-    id: 'art-2',
-    tag: {
-      en: 'Supply Chain',
-      zh: '供应链排程'
-    },
-    title: {
-      en: 'The complete playbook on SAP ERP and lean materials tracking for industrial lines',
-      zh: 'SAP ERP 深度实务：大型汽车与零配件制造产线精益物料跟单与主生产计划跟进'
-    },
-    desc: {
-      en: 'Learn to eliminate parts starvation and reduce inventory dwell time by keeping Bill of Materials (BOM) strictly aligned with shopfloor dispatch triggers.',
-      zh: '系统性复盘如何承接整车厂物料清单（BOM）跟单采购，减少在库周转积压，理顺总装车间生产跟进与物流分发的实操干货。'
-    },
-    date: 'Apr 24, 2026',
-    author: '周宇 (Zhou Yu)',
-    readTime: {
-      en: '4 min read',
-      zh: '阅读时长约 4 分钟'
-    },
-    bgColor: '#FF5E5B',
-    illustrationType: 'hierarchy'
-  },
-  {
-    id: 'art-3',
-    tag: {
-      en: 'Group Treasury',
-      zh: '集团资金融通'
-    },
-    title: {
-      en: 'Financing global operations: Letters of Credit and treasury spread arbitrages',
-      zh: '大型企业集团全球化资金运营：信用证风险付款、套利与大行存贷利差价深度谈判'
-    },
-    desc: {
-      en: 'Practical methodologies on mapping cash requirements for industrial plants while using Letter of Credit structures to leverage working capital limits.',
-      zh: '高含金量案例：拆解如何精准合计全国多家加工实体资金量、向合作银行争取最优汇价，并熟练落地信用额度保障物料付款安全。'
-    },
-    date: 'Mar 15, 2026',
-    author: '周宇 (Zhou Yu)',
-    readTime: {
-      en: '8 min read',
-      zh: '阅读时长约 8 分钟'
-    },
-    bgColor: '#5CE1E6',
-    illustrationType: 'tips'
-  }
-];
